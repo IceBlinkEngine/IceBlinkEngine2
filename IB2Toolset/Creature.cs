@@ -71,6 +71,7 @@ namespace IB2Toolset
         private int _threatRange = 20;
         private int _criticalMultiplier = 2;
         private string _ai = "BasicAttacker";
+        private string _ai_script = "ai_script.js";
         //private AiBasicTactic cr_ai = AiBasicTactic.BasicAttacker;
         private int _fortitude = 0;
         private int _will = 0;
@@ -439,7 +440,13 @@ namespace IB2Toolset
         {
             get { return this._ai; }
             set { this._ai = value; }
-        }              
+        }
+        [CategoryAttribute("01 - AI"), DescriptionAttribute("AI Script for the creature to use - for use with ScriptedAttacker")]
+        public string ai_script
+        {
+            get { return this._ai_script; }
+            set { this._ai_script = value; }
+        }
         [Browsable(true), TypeConverter(typeof(SpriteConverter))]
         [CategoryAttribute("02 - Attack/Defend"), DescriptionAttribute("Filename of the Sprite to use for the creature's projectiles")]
         public string cr_projSpriteFilename
